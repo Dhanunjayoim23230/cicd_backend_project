@@ -39,7 +39,9 @@ pipeline{
                 steps{
                     script{
                         sh """
-                        docker build -t backend:v.1.0.0 .
+                        aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 753369745113.dkr.ecr.us-east-1.amazonaws.com
+                        docker build -t expense/backend:latest 753369745113.dkr.ecr.us-east-1.amazonaws.com/expense/backend:appVersion .
+                        docker push 753369745113.dkr.ecr.us-east-1.amazonaws.com/expense/backend:latest
                         """
                     }
                     
