@@ -44,6 +44,7 @@ pipeline{
                         docker build -t expense/backend:latest 753369745113.dkr.ecr.us-east-1.amazonaws.com/expense/backend:appVersion .
                         docker push 753369745113.dkr.ecr.us-east-1.amazonaws.com/expense/backend:latest
                         """
+                        
                         }
                         
                     }
