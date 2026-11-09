@@ -35,6 +35,16 @@ pipeline{
                     
                 }
             }
+            stage('Docker Build'){
+                steps{
+                    script{
+                        sh """
+                        docker build -t Dhanunjayoim23230/backend:v.1.0.0
+                        """
+                    }
+                    
+                }
+            }
         }
         post { 
         always { 
